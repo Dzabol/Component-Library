@@ -1,0 +1,59 @@
+#root {
+  width: 100%;
+  height: 100%;
+
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 3.9rem;
+  letter-spacing: 0em;
+}
+
+:root {
+  --dark-themeColor: #2c2b2b;
+  --darker-themeColor: #1d1c1c;
+  --light-themeColor: #eaeaea;
+  --lighter-themeColor: #f0f0f0;
+  --dark-beckGround: #303030;
+  --light-backGround: #ffffff;
+}
+
+.theme-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1875rem;
+}
+
+/* Themes Dark / Light*/
+
+.header-theme-dark,
+.footer-theme-dark {
+  background-color: var(--darker-themeColor);
+  color: var(--lighter-themeColor);
+}
+
+.header-theme-light,
+.footer-theme-light {
+  background-color: var(--lighter-themeColor);
+  color: var(--darker-themeColor);
+}
+
+.main-theme-dark {
+  background-color: var(--dark-themeColor);
+  color: var(--lighter-themeColor);
+}
+
+.main-theme-light {
+  background-color: var(lighter-themeColor);
+}
