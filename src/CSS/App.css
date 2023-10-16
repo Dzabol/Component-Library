@@ -26,13 +26,8 @@
   --light-backGround: #ffffff;
 }
 
-.theme-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.1875rem;
+.page-border {
+  box-sizing: border-box;
 }
 
 /* Themes Dark / Light*/

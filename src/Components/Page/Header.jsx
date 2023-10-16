@@ -2,19 +2,20 @@ import React from "react";
 import { BsToggleOn, BsToggleOff } from "react-icons/bs";
 import { ThemeContext } from "../../App";
 
+import "../../CSS/Header.css";
+
 export default function Header({ children, ...rest }) {
-  const theme = React.useContext(ThemeContext);
+  const { theme, toggleOn } = React.useContext(ThemeContext);
 
   const currentThemeName = theme[0].toUpperCase() + theme.slice(1);
 
   return (
-    <div className={`header-theme-${theme}`}>
+    <header className={`header-theme-${theme}`}>
       <h1>{children}</h1>
-
-      <div className="theme-button">
-        {`${currentThemeName} mode`}
+      <div onClick={toggleOn} className={"theme-button-container"}>
+        <span>{`${currentThemeName} mode`}</span>
         {theme === "dark" ? <BsToggleOff /> : <BsToggleOn />}
       </div>
-    </div>
+    </header>
   );
 }

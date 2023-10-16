@@ -1,0 +1,41 @@
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.theme-button-container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1.1875rem;
+  margin: 0 1em;
+  cursor: pointer;
+}
+
+.theme-button-container span {
+  margin: 0 1em 0 1em;
+}
+
+head > h1 {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .theme-button-container {
+    position: static;
+    margin: 0;
+  }
+}
