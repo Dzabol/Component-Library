@@ -34,7 +34,7 @@ export default function MainContent({ ...rest }) {
               {avaiableColors.map((color) => {
                 return (
                   <Badge key={color} type="Square" color={color}>
-                    Gray - Square
+                    {`${color}- Square`}
                   </Badge>
                 );
               })}
@@ -47,7 +47,7 @@ export default function MainContent({ ...rest }) {
               {avaiableColors.map((color) => {
                 return (
                   <Badge key={color} type="Pill" color={color}>
-                    Gray - Square
+                    {`${color}- Pill`}
                   </Badge>
                 );
               })}
