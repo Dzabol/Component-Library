@@ -1,0 +1,32 @@
+.componentBox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+}
+
+.componentBoxMainContent-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: fit-content;
+}
+
+.boxMainContentName-container {
+  margin: 0 0.1em;
+  text-align: right;
+  width: 5em;
+}
+
+.boxMainContentItems-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

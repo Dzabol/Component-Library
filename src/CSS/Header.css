@@ -5,6 +5,7 @@ header {
   align-items: center;
   flex-wrap: wrap;
   flex-grow: 1;
+  height: fit-content;
 }
 
 .theme-button-container {
@@ -24,8 +25,10 @@ header {
   margin: 0 1em 0 1em;
 }
 
-head > h1 {
+header > h1 {
   max-width: 100%;
+  font-size: 3em;
+  margin: 0.6em;
 }
 
 @media (max-width: 768px) {

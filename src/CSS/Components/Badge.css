@@ -1,13 +1,14 @@
 .badge {
+  font-family: Inter;
+  font-size: 0.9rem;
+  padding: 0.15em 0.85em;
+  font-weight: bold;
+  line-height: 1.4em;
+
   display: flex;
   flex-wrap: wrap;
   width: fit-content;
   height: fit-content;
-  font-family: Inter;
-  font-size: 0.9rem;
-  padding: 0.15em 0.85em;
-  font-weight: 500;
-  line-height: 1.4em;
   text-align: center;
   margin: 0.5em;
   cursor: pointer;
