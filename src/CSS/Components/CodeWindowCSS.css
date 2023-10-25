@@ -1,0 +1,40 @@
+.codeWindow-mainContainer {
+  margin: 0.5rem;
+  width: fit-content;
+  max-width: 50%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: left;
+}
+
+.font-header {
+  font-family: "Permanent Marker";
+  color: white;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.8em;
+}
+
+.codeHeader-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #3a404d;
+  align-items: center;
+  padding: 0 0.25em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+}

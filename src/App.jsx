@@ -7,6 +7,8 @@ import Header from "./Components/Page/Header";
 import MainContent from "./Components/Page/MainContent";
 import Footer from "./Components/Page/Footer";
 
+import CodeWindow from "./Components/AditionalFeatures/CodeWindow";
+
 // Styleing
 import "./CSS/App.css";
 
@@ -21,6 +23,7 @@ export default function App() {
       <div className="page-border">
         <Header>Component Library</Header>
         <MainContent />
+        <CodeWindow>TEST</CodeWindow>
         <Footer />
       </div>
     </ThemeContext.Provider>

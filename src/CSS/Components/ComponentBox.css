@@ -18,6 +18,11 @@
   width: 100%;
 }
 
+.componentBoxMainContent-container > * {
+  flex: 0 0 calc(33.33% -1px);
+  margin: 5px;
+}
+
 .boxMainContentName-container {
   margin: 0 0.1em;
   text-align: right;

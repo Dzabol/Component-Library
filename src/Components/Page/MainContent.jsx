@@ -2,9 +2,10 @@ import React from "react";
 
 //Components
 import { ComponentBox, BoxMainContent } from "../ComponentBox/index";
-import Badge from "../Badges/Badge";
+import CodeWindow from "../AditionalFeatures/CodeWindow";
 
 //Style
+import Badge from "../Badges/Badge";
 
 //context
 import { ThemeContext } from "../../App";
