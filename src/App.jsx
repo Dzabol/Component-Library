@@ -23,7 +23,7 @@ export default function App() {
       <div className="page-border">
         <Header>Component Library</Header>
         <MainContent />
-        <CodeWindow>TEST</CodeWindow>
+
         <Footer />
       </div>
     </ThemeContext.Provider>

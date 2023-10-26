@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import useToogle from "../../hooks/useToggle";
 
@@ -19,16 +19,37 @@ import { ThemeContext } from "../../App";
 
 export default function CodeWindow({
   children,
-  name = "Test",
-  URL,
+  name = "",
+  URL = "",
   language = "javascript",
 }) {
   const { theme } = React.useContext(ThemeContext);
-  const currentTheme = theme === "dark" ? atomOneDark : docco;
+  const currentTheme =
+    theme === "dark"
+      ? {
+          headerColor: "",
+          fontColor: "",
+          codeWindow: atomOneDark,
+          borderTheme: "codeWindow-BorderLine-Dark",
+        }
+      : {
+          headerColor: "codeHeader-light",
+          fontColor: "font-header-light",
+          codeWindow: docco,
+          borderTheme: "codeWindow-BorderLine-Light",
+        };
+
   const [isCoppier, updateIsCoppier] = useToogle({ initialValue: false });
+  const [codeString, setCode] = React.useState("");
 
-  const codeString = `import SyntaxHighlighter from "react-aaaaaaaaaaaaaaaaaaaaasyntax-highlighter";`;
+  useEffect(() => {
+    if (!URL === "") {
+      const text = children.toString();
+      setCode(text);
+    }
+  }, []);
 
+  //   Functions
   function handleCopieClick() {
     navigator.clipboard.writeText(codeString);
     updateIsCoppier();
@@ -37,18 +58,23 @@ export default function CodeWindow({
     }, 3000);
   }
 
+  function getFileContent(fileAdress) {}
+
   return (
-    <div className="codeWindow-mainContainer">
-      <div className="codeHeader-container">
-        <p className="font-header">{name}</p>
-        <button className="font-header copyButton" onClick={handleCopieClick}>
+    <div className={`codeWindow-mainContainer ${currentTheme.borderTheme}`}>
+      <div className={`codeHeader-container ${currentTheme.headerColor}`}>
+        <p className={`font-header ${currentTheme.fontColor}`}>{name}</p>
+        <button
+          className={`font-header ${currentTheme.fontColor} copyButton`}
+          onClick={handleCopieClick}
+        >
           <span>{isCoppier ? <BsCheck /> : <BsClipboard />}</span>
           {isCoppier ? "Copied" : "Copy"}
         </button>
       </div>
       <SyntaxHighlighter
         language={language}
-        style={currentTheme}
+        style={currentTheme.codeWindow}
         customStyle={{ padding: "1em" }}
         wrapLongLines={true}
       >

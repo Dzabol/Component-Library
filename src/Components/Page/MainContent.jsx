@@ -54,6 +54,9 @@ export default function MainContent({ ...rest }) {
               })}
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
+          <CodeWindow name="CSS" url="aaa">
+            Code Example
+          </CodeWindow>
         </ComponentBox>
       </div>
     </div>

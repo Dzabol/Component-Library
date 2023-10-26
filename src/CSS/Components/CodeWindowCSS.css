@@ -7,12 +7,25 @@
   text-align: left;
 }
 
+.codeWindow-BorderLine-Light {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.codeWindow-BorderLine-Dark {
+  box-shadow: 0px 0px 3px 0px rgb(255, 255, 255, 0.5);
+}
+
 .font-header {
   font-family: "Permanent Marker";
   color: white;
   font-size: 1rem;
   line-height: 1;
+  font-weight: bold;
   padding: 0.8em;
+}
+
+.font-header-light {
+  color: rgb(27, 27, 27);
 }
 
 .codeHeader-container {
@@ -22,6 +35,10 @@
   align-items: center;
   padding: 0 0.25em;
   margin: 0;
+}
+
+.codeHeader-light {
+  background-color: #c7d0e4;
 }
 
 p {
