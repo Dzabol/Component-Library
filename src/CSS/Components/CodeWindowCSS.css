@@ -1,13 +1,33 @@
 .codeWindow-mainContainer {
-  margin: 0.5rem;
+  margin: 1rem;
   width: fit-content;
-  max-width: 50%;
+  height: fit-content;
+
   border-radius: 0.5rem;
   overflow: hidden;
   text-align: left;
+  position: relative;
+  overflow-x: hidden;
 }
 
-.codeWindow-BorderLine-Light {
+.codeContainer {
+  max-height: 350px;
+  max-width: 760px;
+  overflow-y: auto;
+}
+
+.codeContainer::-webkit-scrollbar {
+  width: 0.4em;
+  height: 0.4em;
+  background-color: rgb(235, 235, 235);
+}
+
+.codeContainer::-webkit-scrollbar-thumb {
+  background-color: rgb(156, 156, 156);
+  border-radius: 0.2em;
+}
+
+.codeContainer .codeWindow-BorderLine-Light {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 }
 

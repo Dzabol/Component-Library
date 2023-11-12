@@ -1,8 +1,11 @@
 .componentBox {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+  max-width: 1200px;
   height: fit-content;
 }
 

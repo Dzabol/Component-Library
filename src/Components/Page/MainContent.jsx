@@ -5,6 +5,7 @@ import { ComponentBox, BoxMainContent } from "../ComponentBox/index";
 import CodeWindow from "../AditionalFeatures/CodeWindow";
 
 //Style
+import "../../CSS/MainContent.css";
 import Badge from "../Badges/Badge";
 
 //context
@@ -54,9 +55,27 @@ export default function MainContent({ ...rest }) {
               })}
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
-          <CodeWindow name="CSS" url="aaa">
-            Code Example
-          </CodeWindow>
+
+          <BoxMainContent.Code>
+            <CodeWindow
+              name="CSS - colors"
+              language="CSS"
+              url="../../CSS/Components/Colors.css"
+            />
+
+            <CodeWindow
+              name="CSS"
+              language="CSS"
+              url="../../CSS/Components/Badge.css"
+            />
+
+            <CodeWindow
+              name="JSX"
+              language="javascript"
+              fromTxt={true}
+              url="../../Components/Badges/Badges.txt"
+            />
+          </BoxMainContent.Code>
         </ComponentBox>
       </div>
     </div>

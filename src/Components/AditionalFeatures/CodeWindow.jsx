@@ -19,8 +19,9 @@ import { ThemeContext } from "../../App";
 
 export default function CodeWindow({
   children,
+  fromTxt = false,
   name = "",
-  URL = "",
+  url,
   language = "javascript",
 }) {
   const { theme } = React.useContext(ThemeContext);
@@ -40,14 +41,43 @@ export default function CodeWindow({
         };
 
   const [isCoppier, updateIsCoppier] = useToogle({ initialValue: false });
-  const [codeString, setCode] = React.useState("");
+  const [codeString, setCode] = React.useState(null);
 
   useEffect(() => {
-    if (!URL === "") {
-      const text = children.toString();
-      setCode(text);
+    const modulePath = import.meta.url;
+    const relativePath = url;
+    const absolutePath = new URL(relativePath, modulePath).pathname;
+
+    const loadFileContent = async () => {
+      try {
+        let response;
+
+        if (fromTxt) {
+          response = await fetch(absolutePath);
+        } else {
+          const fileModule = await import(absolutePath);
+          response = new Response(fileModule.default, { status: 200 });
+        }
+
+        if (!response.ok) {
+          throw new Error(`Failed to load file: ${url}`);
+        }
+
+        const fileContent = await response.text();
+        let codeText = fileContent.toString();
+
+        setCode(codeText);
+      } catch (error) {
+        console.error("Error during file loading", error);
+      }
+    };
+
+    if (!url) {
+      setCode(children);
+    } else {
+      loadFileContent();
     }
-  }, []);
+  }, [url, children]);
 
   //   Functions
   function handleCopieClick() {
@@ -57,8 +87,6 @@ export default function CodeWindow({
       updateIsCoppier(false);
     }, 3000);
   }
-
-  function getFileContent(fileAdress) {}
 
   return (
     <div className={`codeWindow-mainContainer ${currentTheme.borderTheme}`}>
@@ -72,14 +100,21 @@ export default function CodeWindow({
           {isCoppier ? "Copied" : "Copy"}
         </button>
       </div>
-      <SyntaxHighlighter
-        language={language}
-        style={currentTheme.codeWindow}
-        customStyle={{ padding: "1em" }}
-        wrapLongLines={true}
-      >
-        {codeString}
-      </SyntaxHighlighter>
+      <div className="codeContainer">
+        <SyntaxHighlighter
+          language={language}
+          style={currentTheme.codeWindow}
+          customStyle={{
+            padding: "1em",
+            width: "100%",
+            height: "100%",
+          }}
+          wrapLongLines={true}
+          showLineNumbers={true}
+        >
+          {codeString}
+        </SyntaxHighlighter>
+      </div>
     </div>
   );
 }
