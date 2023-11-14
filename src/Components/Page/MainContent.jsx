@@ -3,6 +3,7 @@ import React from "react";
 //Components
 import { ComponentBox, BoxMainContent } from "../ComponentBox/index";
 import CodeWindow from "../AditionalFeatures/CodeWindow";
+import Banner from "../Banners/Banner";
 
 //Style
 import "../../CSS/MainContent.css";
@@ -76,6 +77,43 @@ export default function MainContent({ ...rest }) {
               url="../../Components/Badges/Badges.txt"
             />
           </BoxMainContent.Code>
+        </ComponentBox>
+
+        <ComponentBox>
+          <ComponentBox.Name>BANNERS</ComponentBox.Name>
+          <ComponentBox.BoxMainContent>
+            <BoxMainContent.Name>SUCCESS</BoxMainContent.Name>
+            <BoxMainContent.Items>
+              <Banner type="success" tytle="Congratulations !">
+                Yes, you made it !!!
+              </Banner>
+            </BoxMainContent.Items>
+          </ComponentBox.BoxMainContent>
+
+          <ComponentBox.BoxMainContent>
+            <BoxMainContent.Name>WARNING</BoxMainContent.Name>
+            <BoxMainContent.Items>
+              <Banner type="Warning" tytle="Attention !">
+                This time you where lucky
+              </Banner>
+            </BoxMainContent.Items>
+          </ComponentBox.BoxMainContent>
+
+          <ComponentBox.BoxMainContent>
+            <BoxMainContent.Name>ERROR</BoxMainContent.Name>
+            <BoxMainContent.Items>
+              <Banner type="error">Ups...</Banner>
+            </BoxMainContent.Items>
+          </ComponentBox.BoxMainContent>
+
+          <ComponentBox.BoxMainContent>
+            <BoxMainContent.Name>NEUTRAL</BoxMainContent.Name>
+            <BoxMainContent.Items>
+              <Banner type="neutral" tytle="Update avaiable">
+                there is new update
+              </Banner>
+            </BoxMainContent.Items>
+          </ComponentBox.BoxMainContent>
         </ComponentBox>
       </div>
     </div>
