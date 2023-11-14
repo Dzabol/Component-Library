@@ -46,3 +46,14 @@
   margin-left: 35px;
   margin-top: -4px;
 }
+
+.exit-btn {
+  &:active {
+    transform: scale(0.95);
+    border: solid 1px transparent;
+  }
+}
+
+.exit-btn:hover {
+  transition: transform 0.2s ease-in-out;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 // Icons
 import {
@@ -15,15 +16,18 @@ import "../../CSS/Components/Banners.css";
 
 export default function Banner({
   children,
-  variant = "banner",
+  variant = "toast",
   type = "success",
-  delay = null,
+  delay = 5000,
   tytle,
 }) {
   //Variables
+  const [visibility, updateVisibilityState] = useState("");
+  const [hasExecuted, setHasExecuted] = useState(false);
+
   const avaiableVariants = ["banner", "toast", "tip"];
 
-  const avaiableTypes = [
+  const avaiableTypesBannersAndToast = [
     {
       type: "success",
       icon: BsFillCheckCircleFill,
@@ -64,24 +68,55 @@ export default function Banner({
     );
   };
 
+  const changeVisisibility = () => {
+    if (visibility === "") {
+      updateVisibilityState("none");
+    } else {
+      updateVisibilityState("");
+    }
+  };
+
   //Final
-  let chosenType = userSelection(type, avaiableTypes);
+  let chosenType = userSelection(type, avaiableTypesBannersAndToast);
   let chosenVatiant = variantSelection(variant, avaiableVariants);
 
   if (!chosenType || !chosenVatiant) {
-    chosenType = userSelection("Error", avaiableTypes);
+    chosenType = userSelection("Error", avaiableTypesBannersAndToast);
     tytle = "Plese check input data";
     variant = "banner";
   }
 
-  const style = {
+  //Close toast
+  useEffect(() => {
+    if (variant === "toast" && !hasExecuted) {
+      setTimeout(() => {
+        changeVisisibility();
+        setHasExecuted(true);
+      }, delay);
+    }
+  }, [hasExecuted, delay, variant]);
+
+  //Custom styles
+  const mainStyle = {
     color: `var(--text-${chosenType.color})`,
     backgroundColor: `var(--backGroun-${chosenType.color})`,
   };
 
+  const tipTriangleStyle = {
+    color: `var(--backGroun-${chosenType.color})`,
+    display: `${variant === "tip" ? "" : "none"}`,
+  };
+
+  const tipIconStyle = {
+    display: `${variant === "tip" ? "" : "none"}`,
+  };
+
   return (
-    <div>
-      <div className="banner-mainContainer" style={style}>
+    <div
+      style={{ display: visibility }}
+      onClick={variant === "toast" ? changeVisisibility : () => {}}
+    >
+      <div className="banner-mainContainer" style={mainStyle}>
         <div className="icon-container" style={{ color: chosenType.iconColor }}>
           <chosenType.icon />
         </div>
@@ -94,15 +129,15 @@ export default function Banner({
           </h1>
           {children ? <p className="banner-content">{children}</p> : null}
         </div>
-        <BsXLg />
+        <div
+          className="exit-btn"
+          style={tipIconStyle}
+          onClick={changeVisisibility}
+        >
+          <BsXLg />
+        </div>
       </div>
-      <div
-        className="triangle"
-        style={{
-          color: `var(--backGroun-${chosenType.color})`,
-          display: "none",
-        }}
-      ></div>
+      <div className="triangle" style={tipTriangleStyle}></div>
     </div>
   );
 }
