@@ -1,0 +1,28 @@
+.badge {
+  font-family: Inter;
+  font-size: 0.9rem;
+  padding: 0.15em 0.85em;
+  font-weight: bold;
+  line-height: 1.4em;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  margin: 0.5em;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.Square {
+  border-radius: 0.25em;
+}
+
+.Pill {
+  border-radius: 0.75em;
+}
