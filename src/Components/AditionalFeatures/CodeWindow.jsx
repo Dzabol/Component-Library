@@ -42,6 +42,7 @@ export default function CodeWindow({
 
   const [isCoppier, updateIsCoppier] = useToogle({ initialValue: false });
   const [codeString, setCode] = React.useState(null);
+  let codeText = "";
 
   useEffect(() => {
     const modulePath = import.meta.url;
@@ -59,16 +60,14 @@ export default function CodeWindow({
           response = new Response(fileModule.default, { status: 200 });
         }
 
-        if (!response.ok) {
-          throw new Error(`Failed to load file: ${url}`);
+        if (response.ok) {
+          const fileContent = await response.text();
+          codeText = fileContent.toString();
+          setCode(codeText);
         }
-
-        const fileContent = await response.text();
-        let codeText = fileContent.toString();
-
-        setCode(codeText);
       } catch (error) {
         console.error("Error during file loading", error);
+        setCode(`Failed to load file: ${error.message.toString()}`);
       }
     };
 

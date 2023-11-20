@@ -1,0 +1,25 @@
+:root {
+  --backGroun-Gray: #f3f4f6;
+  --text-Gray: #1f2937;
+
+  --backGroun-Red: #fee2e2;
+  --text-Red: #991b1b;
+
+  --backGroun-Yellow: #fef3c7;
+  --text-Yellow: #92400e;
+
+  --backGroun-Green: #d1fae5;
+  --text-Green: #065f46;
+
+  --backGroun-Blue: #dbeafe;
+  --text-Blue: #1e40af;
+
+  --backGroun-Indigo: #e0e7ff;
+  --text-Indigo: #3730a3;
+
+  --backGroun-Purple: #ede9fe;
+  --text-Purple: #5b21b6;
+
+  --backGroun-Pink: #fce7f3;
+  --text-Pink: #9d174d;
+}

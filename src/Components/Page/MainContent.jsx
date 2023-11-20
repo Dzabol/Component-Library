@@ -61,20 +61,22 @@ export default function MainContent({ ...rest }) {
             <CodeWindow
               name="CSS - colors"
               language="CSS"
-              url="../../CSS/Components/Colors.css"
+              fromTxt={true}
+              url="../Colors.txt"
             />
 
             <CodeWindow
               name="CSS"
               language="CSS"
-              url="../../CSS/Components/Badge.css"
+              fromTxt={true}
+              url="../BadgesCSS.txt"
             />
 
             <CodeWindow
               name="JSX"
               language="javascript"
               fromTxt={true}
-              url="./Badges.txt"
+              url="../Badges.txt"
             />
           </BoxMainContent.Code>
         </ComponentBox>
@@ -85,7 +87,7 @@ export default function MainContent({ ...rest }) {
             <BoxMainContent.Name>SUCCESS</BoxMainContent.Name>
             <BoxMainContent.Items>
               <Banner type="success" tytle="Congratulations !">
-                Yes, you made it !!!
+                I'm simple "banner"
               </Banner>
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
@@ -93,8 +95,8 @@ export default function MainContent({ ...rest }) {
           <ComponentBox.BoxMainContent>
             <BoxMainContent.Name>WARNING</BoxMainContent.Name>
             <BoxMainContent.Items>
-              <Banner type="Warning" tytle="Attention !">
-                This time you where lucky
+              <Banner type="Warning" tytle="Attention !" variant="tip">
+                I'm "tip" banner
               </Banner>
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
@@ -102,7 +104,10 @@ export default function MainContent({ ...rest }) {
           <ComponentBox.BoxMainContent>
             <BoxMainContent.Name>ERROR</BoxMainContent.Name>
             <BoxMainContent.Items>
-              <Banner type="error">Ups...</Banner>
+              <Banner type="error">
+                {" "}
+                I'm "toast" banner, I will disapear in 3s
+              </Banner>
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
 
@@ -114,6 +119,29 @@ export default function MainContent({ ...rest }) {
               </Banner>
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
+
+          <BoxMainContent.Code>
+            <CodeWindow
+              name="CSS - colors"
+              language="CSS"
+              fromTxt={true}
+              url="../Colors.txt"
+            />
+
+            <CodeWindow
+              name="CSS"
+              language="CSS"
+              fromTxt={true}
+              url="../BannerCSS.txt"
+            />
+
+            <CodeWindow
+              name="JSX"
+              language="javascript"
+              fromTxt={true}
+              url="../Banner.txt"
+            />
+          </BoxMainContent.Code>
         </ComponentBox>
       </div>
     </div>
