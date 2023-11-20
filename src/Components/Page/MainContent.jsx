@@ -74,7 +74,7 @@ export default function MainContent({ ...rest }) {
               name="JSX"
               language="javascript"
               fromTxt={true}
-              url="../../../public/Badges.txt"
+              url="./Badges.txt"
             />
           </BoxMainContent.Code>
         </ComponentBox>

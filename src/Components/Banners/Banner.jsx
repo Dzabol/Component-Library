@@ -16,7 +16,7 @@ import "../../CSS/Components/Banners.css";
 
 export default function Banner({
   children,
-  variant = "toast",
+  variant = "banner",
   type = "success",
   delay = 5000,
   tytle,
