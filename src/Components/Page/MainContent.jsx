@@ -95,8 +95,8 @@ export default function MainContent({ ...rest }) {
           <ComponentBox.BoxMainContent>
             <BoxMainContent.Name>WARNING</BoxMainContent.Name>
             <BoxMainContent.Items>
-              <Banner type="Warning" tytle="Attention !" variant="tip">
-                I'm "tip" banner
+              <Banner type="Warning" tytle="Attention !" variant="banner">
+                Watch what you are doing !
               </Banner>
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
@@ -106,7 +106,7 @@ export default function MainContent({ ...rest }) {
             <BoxMainContent.Items>
               <Banner type="error">
                 {" "}
-                I'm "toast" banner, I will disapear in 3s
+                I'm "toast" banner, I will disapear in 5s
               </Banner>
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>
@@ -116,6 +116,15 @@ export default function MainContent({ ...rest }) {
             <BoxMainContent.Items>
               <Banner type="neutral" tytle="Update avaiable">
                 there is new update
+              </Banner>
+            </BoxMainContent.Items>
+          </ComponentBox.BoxMainContent>
+
+          <ComponentBox.BoxMainContent>
+            <BoxMainContent.Name>TIP</BoxMainContent.Name>
+            <BoxMainContent.Items>
+              <Banner type="Blue" tytle="Attention !" variant="tip">
+                I'm "tip" banner
               </Banner>
             </BoxMainContent.Items>
           </ComponentBox.BoxMainContent>

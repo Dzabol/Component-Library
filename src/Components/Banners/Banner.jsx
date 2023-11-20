@@ -8,6 +8,7 @@ import {
   BsFillXCircleFill,
   BsInfoCircleFill,
   BsXLg,
+  BsInbox,
 } from "react-icons/bs";
 
 //Style
@@ -54,6 +55,57 @@ export default function Banner({
     },
   ];
 
+  const avaiableTypesOfTip = [
+    {
+      type: "Dark",
+      icon: BsInbox,
+      color: "Dark",
+      iconColor: "#C7C7C7",
+    },
+    {
+      type: "Blue",
+      icon: BsInbox,
+      color: "DarkBlue",
+      iconColor: "#7EA6F2",
+    },
+    {
+      type: "Pink",
+      icon: BsInbox,
+      color: "Red",
+      iconColor: "#F462E6",
+    },
+    {
+      type: "Green",
+      icon: BsInbox,
+      color: "DarkGreen",
+      iconColor: "#C1FFCF",
+    },
+    {
+      type: "Light",
+      icon: BsInbox,
+      color: "Light",
+      iconColor: "#6B7280",
+    },
+    {
+      type: "LightBlue",
+      icon: BsInbox,
+      color: "LightBlue",
+      iconColor: "#1C51B9",
+    },
+    {
+      type: "LightPink",
+      icon: BsInbox,
+      color: "LightPink",
+      iconColor: "#C7369E",
+    },
+    {
+      type: "LightGreen",
+      icon: BsInbox,
+      color: "LightGreen",
+      iconColor: "#41A557",
+    },
+  ];
+
   //Functions
   const userSelection = (userType, arrayWithAvaiableVariants) => {
     return arrayWithAvaiableVariants.find(
@@ -77,7 +129,12 @@ export default function Banner({
   };
 
   //Final
-  let chosenType = userSelection(type, avaiableTypesBannersAndToast);
+  let possibieletes =
+    variant.toUpperCase() === "TIP"
+      ? avaiableTypesOfTip
+      : avaiableTypesBannersAndToast;
+
+  let chosenType = userSelection(type, possibieletes);
   let chosenVatiant = variantSelection(variant, avaiableVariants);
 
   if (!chosenType || !chosenVatiant) {
