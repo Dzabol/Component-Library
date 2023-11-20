@@ -22,4 +22,28 @@
 
   --backGroun-Pink: #fce7f3;
   --text-Pink: #9d174d;
+
+  --backGroun-Dark: #262626;
+  --text-Dark: #c7c7c7;
+
+  --backGroun-DarkBlue: #1e40af;
+  --text-DarkBlue: #e8edff;
+
+  --backGroun-DarkPink: #a9229b;
+  --text-DarkPink: #ffe9fd;
+
+  --backGroun-DarkGreen: #47aa5d;
+  --text-DarkGreen: #e3ffe9;
+
+  --backGroun-Light: #6b7280;
+  --text-Light: #6b7280;
+
+  --backGroun-LightBlue: #1c51b9;
+  --text-LightBlue: #1c51b9;
+
+  --backGroun-LightPink: #c7369e;
+  --text-LightPink: #c7369e;
+
+  --backGroun-LightGreen: #3c8c4e;
+  --text-LightGreen: #3c8c4e;
 }
